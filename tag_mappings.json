@@ -1,0 +1,781 @@
+{
+    "Rock": [
+        "Rock"
+    ],
+    "Electronic": [
+        "Electronic"
+    ],
+    "Alternative": [
+        "Alternative"
+    ],
+    "Indie": [
+        "Indie"
+    ],
+    "Pop": [
+        "Pop"
+    ],
+    "Metal": [
+        "Metal"
+    ],
+    "Alternative Rock": [
+        "Alternative Rock",
+        "Rock"
+    ],
+    "Jazz": [
+        "Jazz"
+    ],
+    "Classic Rock": [
+        "Classic Rock",
+        "Rock"
+    ],
+    "Ambient": [
+        "Ambient"
+    ],
+    "Experimental": [
+        "Experimental"
+    ],
+    "Folk": [
+        "Folk"
+    ],
+    "Punk": [
+        "Punk"
+    ],
+    "Indie Rock": [
+        "Indie Rock",
+        "Rock"
+    ],
+    "Hip-Hop": [
+        "Hip-Hop"
+    ],
+    "Hard Rock": [
+        "Hard Rock",
+        "Rock"
+    ],
+    "Instrumental": [
+        "Instrumental"
+    ],
+    "Black Metal": [
+        "Black Metal",
+        "Metal"
+    ],
+    "Dance": [
+        "Dance"
+    ],
+    "80s": [
+        "80s"
+    ],
+    "Progressive Rock": [
+        "Progressive Rock",
+        "Rock"
+    ],
+    "Death Metal": [
+        "Death Metal",
+        "Rock"
+    ],
+    "Heavy Metal": [
+        "Heavy Metal",
+        "Metal"
+    ],
+    "Hardcore": [
+        "Hardcore"
+    ],
+    "British": [
+        "British"
+    ],
+    "Soul": [
+        "Soul"
+    ],
+    "Chillout": [
+        "Chillout"
+    ],
+    "Electronica": [
+        "Electronic"
+    ],
+    "Rap": [
+        "Rap"
+    ],
+    "Classical": [
+        "Classic"
+    ],
+    "Industrial": [
+        "Industrial"
+    ],
+    "Soundtrack": [
+        "Soundtrack"
+    ],
+    "Punk Rock": [
+        "Punk Rock",
+        "Rock",
+        "Punk"
+    ],
+    "Blues": [
+        "Blues"
+    ],
+    "Thrash Metal": [
+        "Thrash Metal",
+        "Metal"
+    ],
+    "90s": [
+        "90s"
+    ],
+    "Acoustic": [
+        "Acoustic"
+    ],
+    "Metalcore": [
+        "Metalcore",
+        "Metal"
+    ],
+    "Psychedelic": [
+        "Psychedelic"
+    ],
+    "Japanese": [
+        "Japanese"
+    ],
+    "Post-Rock": [
+        "Post Rock",
+        "Rock"
+    ],
+    "Progressive Metal": [
+        "Progressive Metal",
+        "Metal"
+    ],
+    "German": [
+        "German"
+    ],
+    "Berlin": ["German"],
+    "Hip Hop": [
+        "Hip-Hop"
+    ],
+    "Funk": [
+        "Funk"
+    ],
+    "New Wave": [
+        "New Wave"
+    ],
+    "House": [
+        "House"
+    ],
+    "Post-Punk": [
+        "Post Punk",
+        "Punk"
+    ],
+    "Grunge": [
+        "Grunge Rock"
+    ],
+    "American": [
+        "American"
+    ],
+    "Classic": [
+        "Classic"
+    ],
+    "Chill": [
+        "Chillout"
+    ],
+    "Noise Pop": [
+        "Noise Pop",
+        "Pop"
+    ],
+    "College Rock": [
+        "College Rock",
+        "Rock"
+    ],
+    "Garage Rock": [
+        "Garage Rock",
+        "Rock"
+    ],
+    "Garage": [
+        "Garage"
+    ],
+    "Atmospheric": [
+        "Atmospheric"
+    ],
+    "00s": [
+        "00s"
+    ],
+    "Indie Pop": [
+        "Indie Pop",
+        "Pop",
+        "Indie"
+    ],
+    "Pop Rock": [
+        "Pop Rock",
+        "Rock"
+    ],
+    "Britpop": [
+        "Brit Pop",
+        "British",
+        "Pop"
+    ],
+    "Feel Good": [
+        "Feel Good"
+    ],
+    "Party": [
+        "Party"
+    ],
+    "Anthem": [
+        "Anthem"
+    ],
+    "Synth Rock": [
+        "Synth Rock",
+        "Rock",
+        "Synth"
+    ],
+    "Alternative Punk": [
+        "Alternative Punk",
+        "Punk"
+    ],
+    "Alt Rock": [
+        "Alt Rock",
+        "Rock",
+        "Alternative"
+    ],
+    "Electronic Rock": [
+        "Electronic Rock",
+        "Rock"
+    ],
+    "Groove": [
+        "Groove"
+    ],
+    "Modern Rock": [
+        "Modern Rock",
+        "Rock"
+    ],
+    "Progressive": [
+        "Progressive"
+    ],
+    "Brit Rock": [
+        "British Rock",
+        "Rock",
+        "British"
+    ],
+    "Britrock": [
+        "Brit Rock"
+    ],
+    "Space Rock": [
+        "Space Rock",
+        "Rock"
+    ],
+    "New Prog": [
+        "New Progressive",
+        "Progressive"
+    ],
+    "British Rock": [
+        "British Rock",
+        "Rock",
+        "British"
+    ],
+    "Art Rock": [
+        "Art Rock",
+        "Rock"
+    ],
+    "Neo-Prog": [
+        "New Prog"
+    ],
+    "Pop Punk": [
+        "Pop Punk",
+        "Pop",
+        "Punk"
+    ],
+    "Pop-Punk": [
+        "Pop Punk"
+    ],
+    "Punk-Rock": [
+        "Punk Rock",
+        "Punk",
+        "Rock"
+    ],
+    "1988": [
+        "80s"
+    ],
+    "Melancholic": [
+        "Melancholic"
+    ],
+    "Melancholy": [
+        "Melancholic"
+    ],
+    "1980s": [
+        "80s"
+    ],
+    "Alt": [
+        "Alternative"
+    ],
+    "Soundtracks": [
+        "Soundtrack"
+    ],
+    "2004": [
+        "00s"
+    ],
+    "Anthemic": [
+        "Anthem"
+    ],
+    "2000s": [
+        "00s"
+    ],
+    "USA": [
+        "American"
+    ],
+    "UK": [
+        "British"
+    ],
+    "2003": [
+        "00s"
+    ],
+    "English": [
+        "English"
+    ],
+    "Brit": [
+        "British"
+    ],
+    "1994": [
+        "90s"
+    ],
+    "Punkrock": [
+        "Punk Rock",
+        "Punk",
+        "Rock"
+    ],
+    "Punk Revival": [
+        "Punk Revival",
+        "Punk"
+    ],
+    "90s Rock": [
+        "90s Rock",
+        "90s"
+    ],
+    "Post-Grunge": [
+        "Grunge Rock"
+    ],
+    "Punk Pop": [
+        "Punk Pop",
+        "Punk",
+        "Pop"
+    ],
+    "Guitar Rock": [
+        "Guitar Rock",
+        "Rock"
+    ],
+    "1990s": [
+        "90s"
+    ],
+    "Punk-Pop": [
+        "Punk Pop"
+    ],
+    "Californian Punk": [
+        "Californian Punk",
+        "Punk"
+    ],
+    "1997": [
+        "90s"
+    ],
+    "Brit Pop": [
+        "British Pop",
+        "Pop",
+        "British"
+    ],
+    "Soft Rock": [
+        "Soft Rock",
+        "Rock"
+    ],
+    "Dream Pop": [
+        "Dream Pop",
+        "Pop"
+    ],
+    "Nostalgic": [
+        "Nostalgic"
+    ],
+    "90's": [
+        "90s"
+    ],
+    "Symphonic Rock": [
+        "Symphonic Rock",
+        "Rock"
+    ],
+    "Symphony": [
+        "Symphony"
+    ],
+    "England": [
+        "British"
+    ],
+    "Relaxing": [
+        "Chillout"
+    ],
+    "Neo-Psychedelia": [
+        "Neo-Psychedelia"
+    ],
+    "1993": [
+        "90s"
+    ],
+    "Grunge Rock": [
+        "Grunge Rock",
+        "Rock"
+    ],
+    "Nu Metal": [
+        "Nu Metal",
+        "Metal"
+    ],
+    "Nu-Metal": [
+        "Nu Metal",
+        "Metal"
+    ],
+    "2001": [
+        "00s"
+    ],
+    "New Metal": [
+        "Nu Metal",
+        "Metal"
+    ],
+    "Experimental Metal": [
+        "Experimental Metal",
+        "Metal"
+    ],
+    "Funk Rock": [
+        "Funk Rock",
+        "Rock"
+    ],
+    "2002": [
+        "00s"
+    ],
+    "Funk Metal": [
+        "Funk Metal",
+        "Metal"
+    ],
+    "Indie Folk": [
+        "Indie Folk",
+        "Folk",
+        "Indie"
+    ],
+    "2005": [
+        "00s"
+    ],
+    "Acoustic Rock": [
+        "Acoustic Rock",
+        "Rock"
+    ],
+    "2006": [
+        "00s"
+    ],
+    "Piano Rock": [
+        "Piano Rock",
+        "Rock"
+    ],
+    "2007": [
+        "00s"
+    ],
+    "Poprock": [
+        "Pop Rock",
+        "Rock",
+        "Pop"
+    ],
+    "Christian Rock": [
+        "Christian Rock",
+        "Rock"
+    ],
+    "Indie-Rock": [
+        "Indie Rock",
+        "Rock"
+    ],
+    "2008": [
+        "00s"
+    ],
+    "African": [
+        "African"
+    ],
+    "Surf Rock": [
+        "Surf Rock",
+        "Rock"
+    ],
+    "Indie Disco": [
+        "Indie Disco",
+        "Indie",
+        "Disco"
+    ],
+    "American Rock": [
+        "American Rock",
+        "Rock",
+        "American"
+    ],
+    "1981": [
+        "80s"
+    ],
+    "70s": [
+        "70s"
+    ],
+    "Rock Ballad": [
+        "Rock Ballad",
+        "Rock",
+        "Ballad"
+    ],
+    "Melodic Rock": [
+        "Melodic Rock",
+        "Rock"
+    ],
+    "80s Pop": [
+        "80s",
+        "Pop"
+    ],
+    "80s Rock": [
+        "80s",
+        "Rock"
+    ],
+    "1991": [
+        "90s"
+    ],
+    "Classic Metal": [
+        "Classic Metal",
+        "Metal"
+    ],
+    "Power Metal": [
+        "Power Metal",
+        "Metal"
+    ],
+    "American Metal": [
+        "American Metal",
+        "Metal",
+        "American"
+    ],
+    "Rock N Roll": [
+        "Rock"
+    ],
+    "1980": [
+        "80s"
+    ],
+    "Classic Hard Rock": [
+        "Classic Hard Rock",
+        "Rock"
+    ],
+    "Gothic Metal": [
+        "Gothic Metal",
+        "Metal"
+    ],
+    "Melodic Metal": [
+        "Melodic Metal",
+        "Metal"
+    ],
+    "Goth Metal": [
+        "Gothic Metal",
+        "Metal"
+    ],
+    "Dark Wave": [
+        "Dark Wave"
+    ],
+    "Synthpop": [
+        "Synth Pop"
+    ],
+    "Synth Pop": ["Synth Pop", "Synth", "Pop"],
+    "80's": [
+        "80s"
+    ],
+    "Metal Ballad": [
+        "Metal Ballad",
+        "Metal",
+        "Ballad"
+    ],
+    "Rock Ballads": [
+        "Rock Ballad",
+        "Rock",
+        "Ballad"
+    ],
+    "Country Rock": [
+        "Country Rock",
+        "Rock"
+    ],
+    "Southern Rock": [
+        "Southern Rock",
+        "Rock"
+    ],
+    "60s": [
+        "60s"
+    ],
+    "Psychedelic Rock": [
+        "Psychedelic Rock",
+        "Psychedelic",
+        "Rock"
+    ],
+    "1975": [
+        "70s"
+    ],
+    "1987": [
+        "80s"
+    ],
+    "Relax": [
+        "Chillout"
+    ],
+    "EDM": [
+        "EDM"
+    ],
+    "Electronic Dance Music": [
+        "EDM"
+    ],
+    "1960": [
+        "60s"
+    ],
+    "1961": [
+        "60s"
+    ],
+    "1962": [
+        "60s"
+    ],
+    "1963": [
+        "60s"
+    ],
+    "1964": [
+        "60s"
+    ],
+    "1965": [
+        "60s"
+    ],
+    "1966": [
+        "60s"
+    ],
+    "1967": [
+        "60s"
+    ],
+    "1968": [
+        "60s"
+    ],
+    "1969": [
+        "60s"
+    ],
+    "1970": [
+        "70s"
+    ],
+    "1971": [
+        "70s"
+    ],
+    "1972": [
+        "70s"
+    ],
+    "1973": [
+        "70s"
+    ],
+    "1974": [
+        "70s"
+    ],
+    "1976": [
+        "70s"
+    ],
+    "1977": [
+        "70s"
+    ],
+    "1978": [
+        "70s"
+    ],
+    "1979": [
+        "70s"
+    ],
+    "1982": [
+        "80s"
+    ],
+    "1983": [
+        "80s"
+    ],
+    "1984": [
+        "80s"
+    ],
+    "1985": [
+        "80s"
+    ],
+    "1986": [
+        "80s"
+    ],
+    "1989": [
+        "80s"
+    ],
+    "1990": [
+        "90s"
+    ],
+    "1992": [
+        "90s"
+    ],
+    "1995": [
+        "90s"
+    ],
+    "1996": [
+        "90s"
+    ],
+    "1998": [
+        "90s"
+    ],
+    "1999": [
+        "90s"
+    ],
+    "2000": [
+        "00s"
+    ],
+    "2009": [
+        "00s"
+    ],
+    "2010": [
+        "10s"
+    ],
+    "2011": [
+        "10s"
+    ],
+    "2012": [
+        "10s"
+    ],
+    "2013": [
+        "10s"
+    ],
+    "2014": [
+        "10s"
+    ],
+    "2015": [
+        "10s"
+    ],
+    "2016": [
+        "10s"
+    ],
+    "2017": [
+        "10s"
+    ],
+    "2018": [
+        "10s"
+    ],
+    "2019": [
+        "10s"
+    ],
+    "2020": [
+        "20s"
+    ],
+    "2021": [
+        "20s"
+    ],
+    "2022": [
+        "20s"
+    ],
+    "2023": [
+        "20s"
+    ],
+    "2024": [
+        "20s"
+    ],
+    "2025": [
+        "20s"
+    ],
+    "2026": [
+        "20s"
+    ],
+    "2027": [
+        "20s"
+    ],
+    "2028": [
+        "20s"
+    ],
+    "2029": [
+        "20s"
+    ],
+    "R&B": ["RnB"],
+    "Focus": ["Concentration"],
+    "Electropop": ["Electro Pop", "Pop"],
+    "US": ["American"],
+    "Deutschrap": ["German Rap", "German", "Rap"],
+    "Deep House": ["Deep House", "House"],
+    "Children": ["Kids"],
+    "Kinder": ["Kids"],
+    "Kinderlieder": ["Kids"],
+    "KPop": ["Korean"],
+    "K-Pop": ["Korean"],
+    "JPop": ["Japanese"],
+    "J-Pop": ["Japanese"]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "pp3345/genretagger",
+  "license": "GNU GPL v3",
+  "require": {
+    "james-heinrich/getid3": "2.0.x-dev",
+    "ext-json": "*"
+  }
+}
