@@ -24,7 +24,7 @@
 		exit(1);
 	}
 
-	$tags     = array_flip(json_decode(file_get_contents("tags.json"), true));
+	$tags     = array_change_key_case(array_flip(json_decode(file_get_contents("tags.json"), true)), CASE_LOWER);
 	$mappings = json_decode(file_get_contents("tag_mappings.json"), true);
 
 	$resolve = function (string $tag) use ($mappings, &$resolve): array {
@@ -52,7 +52,7 @@
 		$track_tags = [];
 
 		foreach($list as $tag) {
-			$tag = $tag->name;
+			$tag = strtolower($tag->name);
 			if(!isset($tags[$tag]))
 				continue;
 
