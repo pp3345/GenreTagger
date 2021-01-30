@@ -11,3 +11,6 @@ php GenreTagger.php [--no-retag] <path-to-collection>
 ```
 
 By default, GenreTagger will remove all existing genre tags, use the `--no-retag` option to prevent that. Collection is expected to be organized in a `/<artist>/<album>/<track>.flac` hierarchy.
+
+## Tag mapping
+A list of accepted tags is defined in `tags.json`. `tag_mappings.json` is used to (recursively) define mappings from tags to genres.
