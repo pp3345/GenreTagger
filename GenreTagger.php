@@ -112,6 +112,16 @@
 				$writer->tagformats   = ["metaflac"];
 				$writer->tag_encoding = "UTF-8";
 
+				if (!isset($vorbisComment["ARTIST"])) {
+					echo "WARNING: Missing artist ($path)" . PHP_EOL;
+					continue;
+				}
+
+				if (!isset($vorbisComment["TITLE"])) {
+					echo "WARNING: Missing title ($path)" . PHP_EOL;
+					continue;
+				}
+
 				foreach($vorbisComment as $name => $value) {
 					if($name == "GENRE") {
 						if (isset($options["no-retag"]))
