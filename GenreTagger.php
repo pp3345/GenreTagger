@@ -16,7 +16,7 @@
 		exit(1);
 	}
 
-	define("KEY", file_get_contents("./key"));
+	define("KEY", trim(file_get_contents("./key")));
 	define("TOP_DIRECTORY", $directory[0]);
 
 	if(!file_exists(TOP_DIRECTORY) || !is_readable(TOP_DIRECTORY) || !is_dir(TOP_DIRECTORY)) {
