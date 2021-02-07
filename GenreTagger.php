@@ -167,8 +167,12 @@
 
 					if(strpos($title, ")", $p)) {
 						$search = "(";
+
+						$title_variants[] = str_replace("(", "[", str_replace(")", "]", $title));
 					} else if(strpos($title, "]", $p)) {
 						$search = "[";
+
+						$title_variants[] = str_replace("[", "(", str_replace("]", ")", $title));
 					}
 
 					if(isset($search)) {
