@@ -19,6 +19,8 @@
 	define("KEY", trim(file_get_contents("./key")));
 	define("TOP_DIRECTORY", $directory[0]);
 
+	const ARTIST_REPLACEMENTS = [", ", " & ", " feat. ", " x ", " vs. "];
+
 	if(!file_exists(TOP_DIRECTORY) || !is_readable(TOP_DIRECTORY) || !is_dir(TOP_DIRECTORY)) {
 		echo "Invalid directory " . TOP_DIRECTORY . PHP_EOL;
 		exit(1);
@@ -74,6 +76,17 @@
 		}
 
 		return $handleTagList($track->track->toptags->tag);
+	};
+
+	$fetchAlbumTags = function ($artist, $album) use ($handleTagList): array {
+		while(!isset($album->album)) {
+			$album = json_decode(file_get_contents("https://ws.audioscrobbler.com/2.0/?method=album.getInfo&api_key=" . KEY . "&format=json&artist=" . urlencode($artist) . "&album=" . urlencode($album) . "&autocorrect=1"));
+
+			if(isset($album->error))
+				return [];
+		}
+
+		return $handleTagList($album->album->tags->tag);
 	};
 
 	$fetchArtistTags = function ($artist) use ($handleTagList): array {
@@ -136,6 +149,11 @@
 
 				$artist_name = $vorbisComment["ARTIST"][0];
 				$title       = $vorbisComment["TITLE"][0];
+				$album       = $vorbisComment["ALBUM"][0];
+
+				unset($version);
+				if(isset($vorbisComment["VERSION"]))
+					$version = $vorbisComment["VERSION"][0];
 
 				echo "$artist_name - $title" . PHP_EOL;
 
@@ -160,22 +178,55 @@
 
 				$title = trim($title);
 
-				$track_tags = $fetchTrackTags($artist_name, $title);
-				if(!$track_tags && strpos($artist_name, ",")) {
-					$track_tags = $fetchTrackTags(str_replace(",", " &", $artist_name), $title);
+				if(isset($version))
+					$title_variants = [$title . " (" . $version . ")", $title . " [" . $version . "]"];
+				else
+					$title_variants = [$title];
+
+				$artist_variants = [$artist_name];
+				if($artist != $artist_name)
+					$artist_variants[] = $artist;
+
+				$artist_variants_orig = $artist_variants;
+				foreach($artist_variants_orig as $variant) {
+					$replace = [];
+
+					foreach(ARTIST_REPLACEMENTS as $replacement) {
+						if(strpos($variant, $replacement))
+							$replace[] = $replacement;
+					}
+
+					foreach($replace as $to_replace) {
+						foreach(ARTIST_REPLACEMENTS as $replacement) {
+							if($replacement == $to_replace)
+								continue;
+
+							$artist_variants[] = str_replace($to_replace, $replacement, $variant);
+						}
+
+						$artist_variants[] = str_replace($to_replace, "", $variant);
+						$artist_variants[] = substr($variant, 0, strpos($variant, $to_replace));
+					}
 				}
-				if(!$track_tags && strpos($artist_name, ",")) {
-					$track_tags = $fetchTrackTags(str_replace(",", " feat. ", $artist_name), $title);
+
+				$track_tags = [];
+
+				foreach($artist_variants as $artist_variant) {
+					foreach($title_variants as $title_variant) {
+						$track_tags = $fetchTrackTags($artist_variant, $title_variant);
+						if($track_tags)
+							break;
+					}
 				}
-				if(!$track_tags && strpos($artist_name, "&")) {
-					$track_tags = $fetchTrackTags(str_replace("&", ",", $artist_name), $title);
+
+				if(!$track_tags) {
+					foreach($artist_variants as $artist_variant) {
+						$track_tags = $fetchAlbumTags($artist_variant, $album);
+						if($track_tags)
+							break;
+					}
 				}
-				if(!$track_tags && strpos($artist_name, "&")) {
-					$track_tags = $fetchTrackTags(str_replace("&", " feat. ", $artist_name), $title);
-				}
-				if(!$track_tags && $artist_name != $artist) {
-					$track_tags = $fetchTrackTags($artist, $title);
-				}
+
 				if(!$track_tags) {
 					$search = json_decode(file_get_contents("https://ws.audioscrobbler.com/2.0/?method=track.search&api_key=" . KEY . "&format=json&track=" . urlencode($title)));
 					foreach($search->results->trackmatches->track as $result) {
@@ -191,11 +242,13 @@
 							break;
 					}
 				}
+
 				if(!$track_tags) {
-					$track_tags = $fetchArtistTags($artist_name);
-				}
-				if(!$track_tags) {
-					$track_tags = $fetchArtistTags($artist);
+					foreach($artist_variants as $artist_variant) {
+						$track_tags = $fetchArtistTags($artist_variant);
+						if($track_tags)
+							break;
+					}
 				}
 
 				if(!$track_tags) {
