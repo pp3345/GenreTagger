@@ -162,7 +162,12 @@
 				else
 					$title_variants = [$title];
 
-				if(($p = stripos($title, "remix")) !== false) {
+				if(($p = stripos($title, "remix")) !== false
+				   || ($p = stripos($title, "edit")) !== false
+				   || ($p = stripos($title, "mix")) !== false
+				   || ($p = stripos($title, "version")) !== false
+				   || ($p = stripos($title, "instrumental")) !== false
+				   || ($p = stripos($title, "live")) !== false) {
 					unset($search);
 
 					if(strpos($title, ")", $p)) {
