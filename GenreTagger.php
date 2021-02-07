@@ -117,6 +117,12 @@
 
 				$path          = TOP_DIRECTORY . "/" . $artist . "/" . $album . "/" . $track;
 				$analyzed      = (new \JamesHeinrich\GetID3\GetID3())->analyze($path);
+
+				if (!isset($analyzed["tags"]["vorbiscomment"])) {
+					echo "WARNING: Missing tags ($path)" . PHP_EOL;
+					continue;
+				}
+
 				$vorbisComment = $analyzed["tags"]["vorbiscomment"];
 				$vorbisComment = array_change_key_case($vorbisComment, CASE_UPPER);
 
