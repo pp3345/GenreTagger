@@ -48,7 +48,7 @@
 		return $ret;
 	};
 
-	$handleTagList = function (array $list) use($tags, $resolve): array {
+	$handleTagList = function (array $list) use ($tags, $resolve): array {
 		$track_tags = [];
 
 		foreach($list as $tag) {
@@ -66,7 +66,7 @@
 	};
 
 	$fetchTrackTags = function ($artist, $title) use ($handleTagList): array {
-		while (!isset($track->track)) {
+		while(!isset($track->track)) {
 			$track = json_decode(file_get_contents("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=" . KEY . "&format=json&artist=" . urlencode($artist) . "&track=" . urlencode($title) . "&autocorrect=1"));
 
 			if(isset($track->error))
@@ -112,19 +112,19 @@
 				$writer->tagformats   = ["metaflac"];
 				$writer->tag_encoding = "UTF-8";
 
-				if (!isset($vorbisComment["ARTIST"])) {
+				if(!isset($vorbisComment["ARTIST"])) {
 					echo "WARNING: Missing artist ($path)" . PHP_EOL;
 					continue;
 				}
 
-				if (!isset($vorbisComment["TITLE"])) {
+				if(!isset($vorbisComment["TITLE"])) {
 					echo "WARNING: Missing title ($path)" . PHP_EOL;
 					continue;
 				}
 
 				foreach($vorbisComment as $name => $value) {
 					if($name == "GENRE") {
-						if (isset($options["no-retag"]))
+						if(isset($options["no-retag"]))
 							continue 2;
 
 						continue;
@@ -153,7 +153,7 @@
 						while($title[--$pos] != $search && $pos > 0)
 							;
 
-						if ($pos > 0)
+						if($pos > 0)
 							$title = substr($title, 0, $pos);
 					}
 				}
