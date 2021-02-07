@@ -147,7 +147,9 @@
 						$writer->tag_data[$name][] = $part;
 				}
 
-				$artist_name = $vorbisComment["ARTIST"][0];
+				$artist_variants = [implode(", ", $vorbisComment["ARTIST"])];
+				array_push($artist_variants, ...$vorbisComment["ARTIST"]);
+
 				$title       = $vorbisComment["TITLE"][0];
 				$album       = $vorbisComment["ALBUM"][0];
 
@@ -155,7 +157,7 @@
 				if(isset($vorbisComment["VERSION"]))
 					$version = $vorbisComment["VERSION"][0];
 
-				echo "$artist_name - $title" . PHP_EOL;
+				echo "$artist_variants[0] - $title" . (isset($version) ? " (" . $version . ")" : "") . PHP_EOL;
 
 				if(isset($version))
 					$title_variants = [$title . " (" . $version . ")", $title . " [" . $version . "]"];
@@ -190,8 +192,7 @@
 					}
 				}
 
-				$artist_variants = [$artist_name];
-				if($artist != $artist_name)
+				if(in_array($artist, $artist_variants))
 					$artist_variants[] = $artist;
 
 				$artist_variants_orig = $artist_variants;
@@ -237,11 +238,11 @@
 				if(!$track_tags) {
 					$search = json_decode(file_get_contents("https://ws.audioscrobbler.com/2.0/?method=track.search&api_key=" . KEY . "&format=json&track=" . urlencode($title)));
 					foreach($search->results->trackmatches->track as $result) {
-						if(!stristr($result->artist, $artist_name) && !stristr($artist_name, $result->artist)
+						if(!stristr($result->artist, $artist_variants[0]) && !stristr($artist_variants[0], $result->artist)
 						   && !stristr($result->artist, $artist) && !stristr($artist, $result->artist)
-						   && soundex($result->artist) != soundex($artist_name)
+						   && soundex($result->artist) != soundex($artist_variants[0])
 						   && soundex($result->artist) != soundex($artist)
-						   && levenshtein($result->artist, $artist_name) > strlen($artist_name) / 3)
+						   && levenshtein($result->artist, $artist_variants[0]) > strlen($artist_variants[0]) / 3)
 							continue;
 
 						$track_tags = $fetchTrackTags($result->artist, $result->name);
