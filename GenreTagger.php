@@ -157,6 +157,11 @@
 
 				echo "$artist_name - $title" . PHP_EOL;
 
+				if(isset($version))
+					$title_variants = [$title . " (" . $version . ")", $title . " [" . $version . "]"];
+				else
+					$title_variants = [$title];
+
 				if(($p = stripos($title, "remix")) !== false) {
 					unset($search);
 
@@ -172,16 +177,9 @@
 							;
 
 						if($pos > 0)
-							$title = substr($title, 0, $pos);
+							$title_variants[] = trim(substr($title, 0, $pos));
 					}
 				}
-
-				$title = trim($title);
-
-				if(isset($version))
-					$title_variants = [$title . " (" . $version . ")", $title . " [" . $version . "]"];
-				else
-					$title_variants = [$title];
 
 				$artist_variants = [$artist_name];
 				if($artist != $artist_name)
