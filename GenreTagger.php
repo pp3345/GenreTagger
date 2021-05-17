@@ -86,6 +86,9 @@
 				return [];
 		}
 
+		if (!$albumJSON->album->tags)
+			return [];
+
 		return $handleTagList($albumJSON->album->tags->tag);
 	};
 
@@ -96,6 +99,9 @@
 			if(isset($artistJSON->error))
 				return [];
 		}
+
+		if (!$artistJSON->artist->tags)
+			return [];
 
 		return $handleTagList($artistJSON->artist->tags->tag);
 	};
