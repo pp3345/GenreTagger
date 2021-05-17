@@ -79,25 +79,25 @@
 	};
 
 	$fetchAlbumTags = function ($artist, $album) use ($handleTagList): array {
-		while(!isset($album->album)) {
-			$album = json_decode(file_get_contents("https://ws.audioscrobbler.com/2.0/?method=album.getInfo&api_key=" . KEY . "&format=json&artist=" . urlencode($artist) . "&album=" . urlencode($album) . "&autocorrect=1"));
+		while(!isset($albumJSON->album)) {
+			$albumJSON = json_decode(file_get_contents("https://ws.audioscrobbler.com/2.0/?method=album.getInfo&api_key=" . KEY . "&format=json&artist=" . urlencode($artist) . "&album=" . urlencode($album) . "&autocorrect=1"));
 
-			if(isset($album->error))
+			if(isset($albumJSON->error))
 				return [];
 		}
 
-		return $handleTagList($album->album->tags->tag);
+		return $handleTagList($albumJSON->album->tags->tag);
 	};
 
 	$fetchArtistTags = function ($artist) use ($handleTagList): array {
-		while(!isset($artist->artist)) {
-			$artist = json_decode(file_get_contents("https://ws.audioscrobbler.com/2.0/?method=artist.getInfo&api_key=" . KEY . "&format=json&artist=" . urlencode($artist) . "&autocorrect=1"));
+		while(!isset($artistJSON->artist)) {
+			$artistJSON = json_decode(file_get_contents("https://ws.audioscrobbler.com/2.0/?method=artist.getInfo&api_key=" . KEY . "&format=json&artist=" . urlencode($artist) . "&autocorrect=1"));
 
-			if(isset($artist->error))
+			if(isset($artistJSON->error))
 				return [];
 		}
 
-		return $handleTagList($artist->artist->tags->tag);
+		return $handleTagList($artistJSON->artist->tags->tag);
 	};
 
 	foreach(scandir(TOP_DIRECTORY) as $artist) {
