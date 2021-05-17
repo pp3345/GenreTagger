@@ -71,7 +71,7 @@
 		while(!isset($track->track)) {
 			$track = json_decode(file_get_contents("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=" . KEY . "&format=json&artist=" . urlencode($artist) . "&track=" . urlencode($title) . "&autocorrect=1"));
 
-			if(isset($track->error))
+			if(isset($track->error) || strpos($http_response_header[0], "404"))
 				return [];
 		}
 
@@ -82,7 +82,7 @@
 		while(!isset($albumJSON->album)) {
 			$albumJSON = json_decode(file_get_contents("https://ws.audioscrobbler.com/2.0/?method=album.getInfo&api_key=" . KEY . "&format=json&artist=" . urlencode($artist) . "&album=" . urlencode($album) . "&autocorrect=1"));
 
-			if(isset($albumJSON->error))
+			if(isset($albumJSON->error) || strpos($http_response_header[0], "404"))
 				return [];
 		}
 
@@ -96,7 +96,7 @@
 		while(!isset($artistJSON->artist)) {
 			$artistJSON = json_decode(file_get_contents("https://ws.audioscrobbler.com/2.0/?method=artist.getInfo&api_key=" . KEY . "&format=json&artist=" . urlencode($artist) . "&autocorrect=1"));
 
-			if(isset($artistJSON->error))
+			if(isset($artistJSON->error) || strpos($http_response_header[0], "404"))
 				return [];
 		}
 
